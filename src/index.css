@@ -2,12 +2,12 @@
 a { 
   color: #609cfe !important;
   font-family: 'VT323', monospace;
-  font-size: 28px;
+  font-size: 20px;
 }
 body {
   background-color: #252931 !important;
   margin: 0;
-  font-size: 24px !important;
+  font-size: 18px !important;
   font-family: 'VT323', monospace !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,9 +27,18 @@ code {
   border: 1px solid #7f17d4;
   color: #eee;
   font-size: 18px;
-
+  text-align: center;
 }
+.btn-phantom:hover {
+  background-color: #000;
+  border: 1px solid #862ad1;
+  color: rgb(172, 147, 192);
+  font-size: 18px;
+  text-align: center;
+}
+
 .material-icons { 
+  font-size: 16px;
   vertical-align: middle;
 }
 
@@ -38,6 +47,6 @@ code {
 }
 
 .phantom-logo { 
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
 }

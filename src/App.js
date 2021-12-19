@@ -42,13 +42,13 @@ function App() {
                     </ul>
                     <span className="mb-4 btn-phantom px-2 py-2">
                       
-                    <img className="phantom-logo me-4" src="./icons/phantom.png" alt="boo! very scary" /><span className="me-1">CONNECT WALLET</span> <span class="material-icons">lock</span></span>
+                    <img className="phantom-logo me-3" src="./icons/phantom.png" alt="boo! very scary" /><span>CONNECT </span><span class="material-icons mb-1">lock</span></span>
                 </div>
             </div>
-            <div className="col py-3"><br />
-              <div className="pt-10">
-                <img src="./icons/wait.png" alt="You'll wait fucker." /><br />
-                WE ARE CURRENTLY WORKING ON GETTING DERUGGED
+            <div className="col py-1"><br />
+              <div className="pt-6">
+              WE ARE CURRENTLY WORKING ON GETTING DERUGGED<br />
+                <img src="./icons/wait.png" alt="You'll wait fucker." />
               </div>
             </div>
         </div>
