@@ -44,9 +44,17 @@ code {
 
 .ded-logo { 
   font-size: 40px !important;
-}
 
+}
+.form-control { 
+  background-color: #252931 !important;
+  color: #eee !important;
+}
 .phantom-logo { 
   height: 24px;
   width: 24px;
+}
+input[type=text]{
+  background-color: #252931 !important;
+  color: #eee !important;
 }
