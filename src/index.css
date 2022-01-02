@@ -50,6 +50,10 @@ code {
   background-color: #252931 !important;
   color: #eee !important;
 }
+.monke-stamp { 
+  height: 72px;
+  width: 72px;
+}
 .phantom-logo { 
   height: 24px;
   width: 24px;
