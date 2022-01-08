@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 a { 
-  color: #609cfe !important;
+  color: #9b6890 !important;
   font-family: 'VT323', monospace;
   font-size: 20px;
 }
 body {
   background-color: #252931 !important;
-  margin: 0;
   font-size: 18px !important;
   font-family: 'VT323', monospace !important;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +22,7 @@ code {
   background-color: #426caf;
   color: #eee;
 }
+
 .btn-phantom {
   background-color: #000;
   border: 1px solid #7f17d4;
@@ -32,23 +33,48 @@ code {
 .btn-phantom:hover {
   background-color: #000;
   border: 1px solid #862ad1;
-  color: rgb(172, 147, 192);
+  color: rgb(51, 21, 75);
   font-size: 18px;
   text-align: center;
 }
-
-.material-icons { 
-  font-size: 16px;
-  vertical-align: middle;
+.btn-primary { 
+  color: #9b6890 !important;
+}
+.btn-outline-primary { 
+  border-color: #9b6890 !important;
+  color: #9b6890 !important;
+}
+.btn-outline-primary:hover { 
+  background-color: none !important;
+  border-color: #9b6890 !important;
+  color: #fff !important;
+}
+.card { 
+  background-color: #212529 !important;
 }
 
 .ded-logo { 
-  font-size: 40px !important;
-
+  font-size: 36px !important;
+  position: bottom;
 }
 .form-control { 
   background-color: #252931 !important;
   color: #eee !important;
+}
+.navbar-toggler-icon { 
+  color: #9b6890 !important;
+}
+.nft-pix {
+  height: 100px;
+  width: 100px;
+}
+.material-icons { 
+  font-size: 16px;
+  vertical-align: middle;
+}
+.monke-hardened {
+  color: #9b6890;
+  font-family: 'Wallpoet', cursive;
 }
 .monke-stamp { 
   height: 72px;
@@ -57,6 +83,9 @@ code {
 .phantom-logo { 
   height: 24px;
   width: 24px;
+}
+.sol-circle { 
+  font-size: 30px !important;
 }
 input[type=text]{
   background-color: #252931 !important;

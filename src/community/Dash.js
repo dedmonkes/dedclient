@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Controlled = () => {
+const Dash = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Controlled = () => {
     )
 }
 
-export default Controlled
+export default Dash
