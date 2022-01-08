@@ -52,17 +52,17 @@ code {
 .card { 
   background-color: #212529 !important;
 }
-
 .ded-logo { 
   font-size: 36px !important;
   position: bottom;
 }
+.disconnect { 
+  font-size: 12px;
+  text-decoration: none;
+} 
 .form-control { 
   background-color: #252931 !important;
   color: #eee !important;
-}
-.navbar-toggler-icon { 
-  color: #9b6890 !important;
 }
 .nft-pix {
   height: 100px;

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react/cjs/react.development';
 import axios from 'axios';
 import { FetchNFTClient } from '@audius/fetch-nft'
-import * as moment from 'moment';
 
 const magicEdenRpc = "https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22ded_monkes%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%7D";
 const magicEdenHistory = "https://api-mainnet.magiceden.io/rpc/getGlobalActivitiesByQuery?q=%7B%22%24match%22%3A%7B%22collection_symbol%22%3A%22ded_monkes%22%7D%2C%22%24sort%22%3A%7B%22blockTime%22%3A-1%7D%2C%22%24skip%22%3A0%7D";
@@ -41,7 +40,7 @@ const Landing = (props) => {
             const fetchClient = new FetchNFTClient()
             fetchClient.getCollectibles({
                 solWallets: [props.publicKey] 
-            }).then(res =>{ console.log(res); setNftArray(res.solCollectibles[props.publicKey]); console.log(res.solCollectibles[props.publicKey]) })    
+            }).then(res =>{ setNftArray(res.solCollectibles[props.publicKey]); })    
         }
     }, [props.publicKey])
     const concatAddr = (address) => { 
@@ -50,21 +49,21 @@ const Landing = (props) => {
         return a + "..." + b;
     }
     const dateFormat = (date) => { 
-       return (date.getMonth() + 1) + "/" + date.getDay() + "/" + date.getFullYear()
+        if(date.length > 0){ 
+            let formatted = new Date(date);
+            return (formatted.getMonth() + 1) + "/" + formatted.getDay() + "/" + formatted.getFullYear()
+        }
     }
     const parseSales = (sales) => { 
         const getImage = (mint) => { 
             axios.get(magicEdenNft + mint).then((response) => { return response.data.results.img})
         }
         sales.forEach(x => {
-            console.log(x)
             let img = getImage(x.mint);
             let ui = 
             <div className="row" key={x.transaction_id}>
-                {/* <div className="col">
-                {<img src={img} />}
-                </div> */}
-                <div className="col">{ new Date(x.createdAt.toString()).toString() }</div>
+
+                <div className="col">{ dateFormat(x.createdAt) }</div>
                 <div className="col"><a href={"https://solscan.io/tx/" + x.transaction_id}>{concatAddr(x.transaction_id)}</a></div>
                 <div className="col text-end"><small className="sol-cirle-text">◎</small>{(x.parsedTransaction.total_amount * .000000001).toFixed(2)}</div>
             </div>
@@ -114,6 +113,10 @@ const Landing = (props) => {
                                                             nft.gifUrl : nft.imageUrl}></img>
                                             </div>
                              )
+                                    }
+                                    {props.authState && nftArray.filter(nft => nft.name === "Ded Monkes").length == 0 &&
+                                        <h3>You do not have any Ded Monkes. </h3>
+                                    
                                     }
                                     </div>
                                   

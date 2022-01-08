@@ -24,7 +24,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Navbar publicKey={publicKey} authState={isLoggedIn} phantom={phantom} />
+      <Navbar publicKey={publicKey} authState={isLoggedIn} authUpdate={setIsLoggedIn} phantom={phantom} />
       <div className="container-fluid">
               <div className="row">
                   <div className="col p"><br />
