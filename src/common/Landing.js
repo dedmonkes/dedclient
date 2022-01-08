@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react/cjs/react.development';
 import axios from 'axios';
-import { FetchNFTClient } from '@audius/fetch-nft'
+import {FetchNFTClient} from '@audius/fetch-nft'
 
 const magicEdenRpc = "https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22ded_monkes%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%7D";
 const magicEdenHistory = "https://api-mainnet.magiceden.io/rpc/getGlobalActivitiesByQuery?q=%7B%22%24match%22%3A%7B%22collection_symbol%22%3A%22ded_monkes%22%7D%2C%22%24sort%22%3A%7B%22blockTime%22%3A-1%7D%2C%22%24skip%22%3A0%7D";
@@ -25,7 +25,7 @@ const Landing = (props) => {
     { 
         axios.get(magicEdenHistory).then(
             (response) => { 
-                let onlySales = response.data.results.filter(s => s.txType == "acceptBid" || s.txType == "exchange");
+                let onlySales = response.data.results.filter(s => s.txType === "acceptBid" || s.txType === "exchange");
                 setSalesHistory(onlySales)
             }
         ); 
@@ -107,10 +107,10 @@ const Landing = (props) => {
                                     {!props.authState && <h5>Connect wallet to view.</h5>}
                                     {props.authState && nftArray.length > 0 &&
                                         nftArray.filter(nft => nft.name === "Ded Monkes").map(nft => 
-                                            <div className="col-sm mx-2 my-2">
-                                                        <img key={nft.id} className="nft-pix" src={
-                                                            nft.mediaType == 'GIF' ?
-                                                            nft.gifUrl : nft.imageUrl}></img>
+                                            <div className="col-sm mx-2 my-2" key={nft.transaction_id}>
+                                                <img key={nft.id} className="nft-pix" src={
+                                                    nft.mediaType == 'GIF' ?
+                                                    nft.gifUrl : nft.imageUrl}></img>
                                             </div>
                              )
                                     }

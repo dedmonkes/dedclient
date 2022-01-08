@@ -27,9 +27,9 @@ function App() {
       <Navbar publicKey={publicKey} authState={isLoggedIn} authUpdate={setIsLoggedIn} phantom={phantom} />
       <div className="container-fluid">
               <div className="row">
-                  <div className="col p"><br />
+                  <div className="col mt-2">
                   <BrowserRouter>
-                  <Routes>
+                  <Routes>ng
                       <Route path="/" element={<Landing authState={isLoggedIn} publicKey={publicKey} />} exact />
                       <Route path="/about" element={<About />} exact/>
                   </Routes>

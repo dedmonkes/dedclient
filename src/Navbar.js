@@ -1,16 +1,15 @@
 import dedmonke from './images/dedmonke.png'
-import concatAddr from './common/utils'
-declare global {
-  interface Window {
-      solana:any;
-  }
-}
 
-const Navbar = (props: any) => {
+const Navbar = (props) => {
   const disconnect = () => { 
     window.solana.disconnect();
     props.authUpdate(false);
     
+  }
+  const concatAddr = (address) => { 
+    let a = address.substring(0,4);
+    let b = address.substring(address.length - 4);
+    return a + "..." + b;
   }
   return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
