@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react/cjs/react.development';
 import axios from 'axios';
-import {FetchNFTClient} from '@audius/fetch-nft'
+// import {FetchNFTClient} from '@audius/fetch-nft'
 
 const magicEdenRpc = "https://api-mainnet.magiceden.io/rpc/getListedNFTsByQuery?q=%7B%22%24match%22%3A%7B%22collectionSymbol%22%3A%22ded_monkes%22%7D%2C%22%24sort%22%3A%7B%22takerAmount%22%3A1%2C%22createdAt%22%3A-1%7D%7D";
 const magicEdenHistory = "https://api-mainnet.magiceden.io/rpc/getGlobalActivitiesByQuery?q=%7B%22%24match%22%3A%7B%22collection_symbol%22%3A%22ded_monkes%22%7D%2C%22%24sort%22%3A%7B%22blockTime%22%3A-1%7D%2C%22%24skip%22%3A0%7D";
@@ -35,14 +35,14 @@ const Landing = (props) => {
             parseSales(salesHistory)
         }
     }, [salesHistory])
-    useEffect(() => { 
-        if(props.publicKey.length > 0){ 
-            const fetchClient = new FetchNFTClient()
-            fetchClient.getCollectibles({
-                solWallets: [props.publicKey] 
-            }).then(res =>{ setNftArray(res.solCollectibles[props.publicKey]); })    
-        }
-    }, [props.publicKey])
+    // useEffect(() => { 
+    //     if(props.publicKey.length > 0){ 
+    //         const fetchClient = new FetchNFTClient()
+    //         fetchClient.getCollectibles({
+    //             solWallets: [props.publicKey] 
+    //         }).then(res =>{ setNftArray(res.solCollectibles[props.publicKey]); })    
+    //     }
+    // }, [props.publicKey])
     const concatAddr = (address) => { 
         let a = address.substring(0,4);
         let b = address.substring(address.length - 4);
